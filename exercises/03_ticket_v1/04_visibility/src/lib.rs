@@ -33,41 +33,41 @@ mod ticket {
 }
 
 // TODO: **Exceptionally**, you'll be modifying both the `ticket` module and the `tests` module
-//  in this exercise.
+//  在这个练习中。
 #[cfg(test)]
 mod tests {
     // TODO: Add the necessary `pub` modifiers in the parent module to remove the compiler
-    //  errors about the use statement below.
+    //  关于下面 use 语句的错误。
     use super::ticket::Ticket;
 
-    // Be careful though! We don't want this function to compile after you have changed
-    // visibility to make the use statement compile!
-    // Once you have verified that it indeed doesn't compile, comment it out.
+    // 不过要小心！我们不希望在修改后这个函数还能编译通过
+    // 可见性以使 use 语句编译通过！
+    // 一旦你确认它确实无法编译通过，就把它注释掉。
     fn should_not_be_possible() {
         let ticket = Ticket::new("A title".into(), "A description".into(), "To-Do".into());
 
-        // You should be seeing this error when trying to run this exercise:
+        // 在尝试运行这个练习时，你应该会看到以下错误：
         //
-        // error[E0616]: field `description` of struct `Ticket` is private
+        // error[E0616]: 结构体 `Ticket` 的字段 `description` 是私有的
         //    |
         //    |              assert_eq!(ticket.description, "A description");
         //    |                         ^^^^^^^^^^^^^^^^^^
         //
         // TODO: Once you have verified that the below does not compile,
-        //   comment the line out to move on to the next exercise!
+        //   把该行注释掉以继续下一个练习！
         assert_eq!(ticket.description, "A description");
     }
 
     fn encapsulation_cannot_be_violated() {
-        // This should be impossible as well, with a similar error as the one encountered above.
+        // 这也应该是不可能的，会出现与上面遇到的类似错误。
         // (It will throw a compilation error only after you have commented the faulty line
-        // in the previous test - next compilation stage!)
+        // （在之前的测试中——下一个编译阶段！）
         //
-        // This proves that `Ticket::new` is now the only way to get a `Ticket` instance.
-        // It's impossible to create a ticket with an illegal title or description!
+        // 这证明了 `Ticket::new` 现在是获取 `Ticket` 实例的唯一方式。
+        // 创建包含非法标题或描述的工单是不可能的！
         //
         // TODO: Once you have verified that the below does not compile,
-        //   comment the lines out to move on to the next exercise!
+        //   把这些行注释掉以继续下一个练习！
         let ticket = Ticket {
             title: "A title".into(),
             description: "A description".into(),

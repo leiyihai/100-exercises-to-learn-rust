@@ -1,11 +1,11 @@
-// This is a `main.rs` file, therefore `cargo` interprets this as the root of a binary target.
+// 这是一个 `main.rs` 文件，因此 `cargo` 将其视为二进制目标的根。
 
 // TODO: fix this broken import. Create a new library target in the `src` directory.
-//   The library target should expose a public function named `hello_world` that takes no arguments
-//   and returns nothing.
+//   库目标应公开一个名为 `hello_world` 的公共函数，该函数不接受参数
+//   不返回任何内容。
 use packages::hello_world;
 
-// This is the entrypoint of the binary.
+// 这是二进制程序的入口点。
 fn main() {
     hello_world();
 }

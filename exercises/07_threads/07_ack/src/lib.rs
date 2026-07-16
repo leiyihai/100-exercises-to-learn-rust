@@ -4,7 +4,7 @@ use crate::store::TicketStore;
 pub mod data;
 pub mod store;
 
-// Refer to the tests to understand the expected schema.
+// 参考测试来理解预期的模式。
 pub enum Command {
     Insert { todo!() },
     Get { todo!() }
@@ -30,8 +30,8 @@ pub fn server(receiver: Receiver<Command>) {
                 todo!()
             }
             Err(_) => {
-                // There are no more senders, so we can safely break
-                // and shut down the server.
+                // 没有更多的发送者了，所以我们可以安全地退出
+                // 并关闭服务器。
                 break
             },
         }

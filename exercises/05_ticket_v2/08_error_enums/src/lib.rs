@@ -1,12 +1,12 @@
 // TODO: Use two variants, one for a title error and one for a description error.
-//   Each variant should contain a string with the explanation of what went wrong exactly.
-//   You'll have to update the implementation of `Ticket::new` as well.
+//   每个变体应包含一个字符串，说明具体哪里出错了。
+//   你还需要更新 `Ticket::new` 的实现。
 enum TicketNewError {}
 
 // TODO: `easy_ticket` should panic when the title is invalid, using the error message
-//   stored inside the relevant variant of the `TicketNewError` enum.
-//   When the description is invalid, instead, it should use a default description:
-//   "Description not provided".
+//   存储在 `TicketNewError` 枚举的相应变体中。
+//   当描述无效时，它应该使用默认描述：
+//   "未提供描述"。
 fn easy_ticket(title: String, description: String, status: Status) -> Ticket {
     todo!()
 }

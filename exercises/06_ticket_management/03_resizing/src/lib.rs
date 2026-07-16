@@ -9,9 +9,9 @@ mod tests {
 
         v.push(3); // beyond capacity, needs to resize
 
-        // Can you guess what the new capacity will be?
-        // Beware that the standard library makes no guarantees about the
-        // algorithm used to resize the vector, so this may change in the future.
+        // 你能猜到新的容量是多少吗？
+        // 请注意，标准库并不保证
+        // 用于调整 vector 大小的算法，因此将来可能会发生变化。
         assert_eq!(v.capacity(), todo!());
     }
 }

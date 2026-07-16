@@ -1,6 +1,6 @@
-// We need some more machinery to write a proper exercise for destructors.
-// We'll pick the concept up again in a later chapter after covering traits and
-// interior mutability.
+// 我们需要更多的机制来为析构函数编写一个合适的练习。
+// 我们将在后续章节中讲解 trait 和
+// 内部可变性。
 fn outro() -> &'static str {
     "I have a basic understanding of __!"
 }

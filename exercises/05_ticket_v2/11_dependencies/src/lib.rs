@@ -1,6 +1,6 @@
 // TODO: Add `anyhow` as a dependency of this project.
-//  Don't touch this import!
+//  不要修改这个导入！
 
-// When you import a type (`Error`) from a dependency, the import path must start
-// with the crate name (`anyhow`, in this case).
+// 当你从依赖中导入一个类型（`Error`）时，导入路径必须以
+// 以 crate 名称开头（这里是 `anyhow`）。
 use anyhow::Error;

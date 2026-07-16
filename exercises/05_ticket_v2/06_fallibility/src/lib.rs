@@ -1,5 +1,5 @@
 // TODO: Convert the `Ticket::new` method to return a `Result` instead of panicking.
-//   Use `String` as the error type.
+//   使用 `String` 作为错误类型。
 
 #[derive(Debug, PartialEq)]
 struct Ticket {

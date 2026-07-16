@@ -1,13 +1,13 @@
 // TODO: Implement the `fixed_reply` function. It should accept two `TcpListener` instances,
-//  accept connections on both of them concurrently, and always reply to clients by sending
-//  the `Display` representation of the `reply` argument as a response.
+//  在两者上并发接受连接，并通过发送
+//  `reply` 参数的 `Display` 表示作为响应。
 use std::fmt::Display;
 use tokio::io::AsyncWriteExt;
 use tokio::net::TcpListener;
 
 pub async fn fixed_reply<T>(first: TcpListener, second: TcpListener, reply: T)
 where
-    // `T` cannot be cloned. How do you share it between the two server tasks?
+    // `T` 不能被克隆。你如何在两个服务器任务之间共享它？
     T: Display + Send + Sync + 'static,
 {
     todo!()
@@ -42,7 +42,7 @@ mod tests {
                     let mut socket = tokio::net::TcpStream::connect(addr).await.unwrap();
                     let (mut reader, _) = socket.split();
 
-                    // Read the response
+                    // 读取响应
                     let mut buf = Vec::new();
                     reader.read_to_end(&mut buf).await.unwrap();
                     assert_eq!(&buf, reply.as_bytes());

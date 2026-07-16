@@ -1,5 +1,5 @@
 // TODO: Implement the `in_progress` method. It must return an iterator over the tickets in
-//  `TicketStore` with status set to `Status::InProgress`.
+//  `TicketStore` 中状态为 `Status::InProgress` 的工单。
 use ticket_fields::{TicketDescription, TicketTitle};
 
 #[derive(Clone)]

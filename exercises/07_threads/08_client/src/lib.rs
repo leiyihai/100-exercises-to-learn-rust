@@ -10,7 +10,7 @@ pub mod store;
 pub struct TicketStoreClient {}
 
 impl TicketStoreClient {
-    // Feel free to panic on all errors, for simplicity.
+    // 为简单起见，所有错误都可以直接 panic。
     pub fn insert(&self, draft: TicketDraft) -> TicketId {
         todo!()
     }
@@ -26,7 +26,7 @@ pub fn launch() -> TicketStoreClient {
     todo!()
 }
 
-// No longer public! This becomes an internal detail of the library now.
+// 不再公开！这现在是库的内部细节。
 enum Command {
     Insert {
         draft: TicketDraft,
@@ -57,8 +57,8 @@ fn server(receiver: Receiver<Command>) {
                 let _ = response_channel.send(ticket.cloned());
             }
             Err(_) => {
-                // There are no more senders, so we can safely break
-                // and shut down the server.
+                // 没有更多的发送者了，所以我们可以安全地退出
+                // 并关闭服务器。
                 break;
             }
         }

@@ -1,5 +1,5 @@
 // TODO: fix the `assert_eq` at the end of the tests.
-//  Do you understand why that's the resulting output?
+//  你理解为什么会有这样的输出吗？
 use std::time::Duration;
 use tokio::io::AsyncReadExt;
 use tokio::net::TcpListener;
@@ -35,12 +35,12 @@ mod tests {
 
             let (beginning, end) = message.split_at(message.len() / 2);
 
-            // Send first half
+            // 发送前半部分
             writer.write_all(beginning.as_bytes()).await.unwrap();
             tokio::time::sleep(timeout * 2).await;
             writer.write_all(end.as_bytes()).await.unwrap();
 
-            // Close the write side of the socket
+            // 关闭套接字的写入端
             let _ = writer.shutdown().await;
         }
 
